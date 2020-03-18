@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  cursor: default;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(78, 78, 78, 0.15);
+  box-shadow: inset 1px 1px 2px 0 rgba(78, 78, 78, 0.3);
+}
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #fff;
+}
