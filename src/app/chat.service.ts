@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
-import { stringify } from 'querystring';
+// import { stringify } from 'querystring';
+import {User} from "./chat.model";
 
 @Injectable()
 
@@ -14,8 +15,8 @@ export class ChatService {
   }
 
   newUserJoined() {
-    const observable = new Observable<{ user: string, message: string }>(observer => {
-      this.socket.on('new user joined', (data: { user: string; message: string; }) => {
+    const observable = new Observable<{ user: User, message: string, time: Date }>(observer => {
+      this.socket.on('new user joined', (data: { user: User; message: string; time: Date }) => {
         observer.next(data);
       });
       return () => {
@@ -30,8 +31,8 @@ export class ChatService {
   }
 
   userLeftRoom() {
-    const observable = new Observable<{ user: string, message: string }>(observer => {
-      this.socket.on('left room', (data: { user: string; message: string; }) => {
+    const observable = new Observable<{ user: User, message: string, time: Date }>(observer => {
+      this.socket.on('left room', (data: { user: User; message: string; time: Date}) => {
         observer.next(data);
       });
       return () => {
@@ -45,8 +46,8 @@ export class ChatService {
     this.socket.emit('message', data);
   }
   newMessageReceived() {
-    const observable = new Observable<{ user: string, message: string }>(observer => {
-      this.socket.on('new message', (data: { user: string; message: string; }) => {
+    const observable = new Observable<{ user: User, message: string, time: Date }>(observer => {
+      this.socket.on('new message', (data: { user: User; message: string; time: Date}) => {
         observer.next(data);
       });
       return () => {
