@@ -8,7 +8,7 @@ import {User} from "./chat.model";
 
 export class ChatService {
 
-  private socket = io('http://localhost:2201');
+  private socket = io('https://chats-socket-io.herokuapp.com/');
 
   joinRoom(data: any) {
     this.socket.emit('join', data);
