@@ -231,12 +231,22 @@
   text-align: center;
 }
 
+.msg_time_other_user {
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  width: 150px;
+  text-align: center;
+}
+
 .msg_user_name {
   color: rgba(255, 255, 255, 0.5);
   font-size: 10px;
   margin-bottom: 0px;
   margin-top: 5px;
-  width: 50px;
+  width: 40px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;

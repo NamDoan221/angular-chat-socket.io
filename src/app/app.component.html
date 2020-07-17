@@ -60,11 +60,11 @@
           <div *ngFor="let mes of messageArray" class="d-flex mb-4" [ngClass] = "mes.user.name === user.name ? '' : 'flex-row-reverse'">
             <div class="img_cont_msg" data-toggle="tooltip" data-placement="top" [title]="mes.user.name">
               <img [src]="mes.user.image" class="rounded-circle user_img_msg">
-              <p class="msg_user_name">User: {{ mes.user.name}}</p>
+              <p class="msg_user_name">{{ mes.user.name}}</p>
             </div>
             <div [class]="mes.user.name === user.name ? 'msg_cotainer' : 'msg_cotainer_other_user'">
               {{mes.message}}
-              <span class="msg_time">{{ mes.time | date: 'medium'}}</span>
+              <span [class]="mes.user.name === user.name ? 'msg_time' : 'msg_time_other_user'">{{ mes.time | date: 'medium'}}</span>
             </div>
           </div>
         </div>
