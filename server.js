@@ -4,7 +4,7 @@ const http = require("http");
 const socketIO = require("socket.io");
 
 const app = express();
-const port = process.env.PORT || 2201;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, "dist/angular-socket")));
 
